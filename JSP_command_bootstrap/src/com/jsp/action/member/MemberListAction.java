@@ -1,6 +1,5 @@
 package com.jsp.action.member;
 
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -8,7 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.jsp.action.Action;
 import com.jsp.command.SearchCriteria;
-import com.jsp.dto.MemberVO;
 import com.jsp.service.MemberService;
 
 public class MemberListAction implements Action {
