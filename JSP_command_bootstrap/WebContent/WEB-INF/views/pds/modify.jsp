@@ -4,7 +4,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <title>자료실 수정페이지</title>
 
-<body>
 <body>	
 	 <!-- Content Header (Page header) -->
     <section class="content-header">
