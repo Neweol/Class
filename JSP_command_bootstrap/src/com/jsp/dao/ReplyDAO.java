@@ -14,7 +14,7 @@ public interface ReplyDAO {
 	
 	List<ReplyVO> selectReplyList (SqlSession session,int bno,SearchCriteria cri)throws SQLException;
 	
-	int countReply(SqlSession session)throws SQLException;
+	int countReply(SqlSession session, int bno)throws SQLException;
 	void insertReply(SqlSession session, ReplyVO reply) throws SQLException;
 	void updateReply(SqlSession session, ReplyVO reply) throws SQLException;
 	void deleteReply(SqlSession session, int rno) throws SQLException;

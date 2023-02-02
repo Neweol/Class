@@ -29,8 +29,8 @@ public class ReplyDAOImpl implements ReplyDAO {
 	}
 
 	@Override
-	public int countReply(SqlSession session) throws SQLException {
-		int count = session.selectOne("Reply-Mapper.countReply");
+	public int countReply(SqlSession session, int bno) throws SQLException {
+		int count = session.selectOne("Reply-Mapper.countReply", bno);
 		return count;
 	}
 

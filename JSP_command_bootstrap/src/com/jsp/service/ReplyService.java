@@ -8,7 +8,9 @@ import com.jsp.dto.ReplyVO;
 
 public interface ReplyService {
 	
-	Map<String,Object> replyList(SearchCriteria cri)throws SQLException;
+	Map<String,Object> replyList(int bno, SearchCriteria cri)throws SQLException;
+	
+	int getReplyListCount(int bno) throws SQLException; 
 	
 	void regist(ReplyVO reply) throws SQLException;
 	
