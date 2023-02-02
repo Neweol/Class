@@ -23,7 +23,7 @@ public class ReplyDAOImpl implements ReplyDAO {
 		int limit = cri.getPerPageNum();
 		RowBounds rowBounds = new RowBounds(offset,limit);
 		
-		List<ReplyVO> replyList=session.selectList("Reply-Mapper.selectReplySeqNextValue",rowBounds);
+		List<ReplyVO> replyList=session.selectList("Reply-Mapper.selectReplyList",bno,rowBounds);
 		
 		return replyList;
 	}
