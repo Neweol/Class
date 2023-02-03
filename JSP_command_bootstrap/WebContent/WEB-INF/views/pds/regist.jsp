@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-head></head>
 
 <title>자료등록</title> 
 
@@ -85,7 +84,6 @@ head></head>
 			}
 		}	
 		
-		
 		var formData = {
 				writer : "작성자는 필수입니다.",
 				title : "제목은 필수입니다."					
@@ -117,12 +115,13 @@ head></head>
 			return;
 		}
 		
-		var div=$('<div>').addClass("inputRow").attr("data-no",dataNum);		
-		var input=$('<input>').attr({"type":"file","name":"uploadFile"}).css("display","inline");
+		var div = $('<div>').addClass("inputRow").attr("data-no",dataNum);		
+		var input = $('<input>').attr({"type":"file","name":"uploadFile"}).css("display","inline");
 		div.append(input).append("<button onclick='remove_go("+dataNum+");' style='border:0;outline:0;' class='badge bg-red' type='button'>X</button>");		
 		$('.fileInput').append(div);
 		dataNum++;		
 	}
+	
 	
 	function remove_go(dataNum){
 		//alert(dataNum);

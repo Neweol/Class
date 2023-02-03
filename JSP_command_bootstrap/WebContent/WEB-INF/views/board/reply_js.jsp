@@ -13,6 +13,7 @@
     		<i class="fa fa-clock"></i>{{prettifyDate regdate}}
 	 		<a class="btn btn-primary btn-xs {{rno}}-a" id="modifyReplyBtn" data-rno={{rno}}
 				onclick="replyModifyModal_go('{{rno}}');"
+				style="display:{{visibleByLoginCheck replyer}};"
 	    		data-replyer={{replyer}} data-toggle="modal" data-target="#modifyModal">Modify</a>
   		</span>
 	
@@ -22,6 +23,7 @@
 </div>
 {{/each}}
 </script>
+
 
 <script>
 var replyPage=1;
@@ -51,6 +53,36 @@ Handlebars.registerHelper({
 });
 </script>
 
+<script>
+function replyRegist_go(){
+	var replytext=$('#newReplyText').val();
+	
+	var data={
+			"bno":"${board.bno}",
+			"replyer":"${loginUser.id}",
+			"replytext":replytext
+	}
+	
+	$.ajax({
+		url:"<%=request.getContextPath()%>/reply/regist.do",
+		type:"post",
+		data:JSON.stringify(data),
+		contentType:'application/json',
+		success:function(data){
+			alert('댓글이 등록되었습니다.\n마지막 페이지로 이동합니다.');
+			replyPage=data;
+			getPage("<%=request.getContextPath()%>/reply/list.do?bno="+${board.bno}+"&page="+data);
+			$('#newReplyText').val("");
+		},
+		error:function(error){
+			AjaxErrorSecurityRedirectHandler(error.status);
+		}
+	});
+	
+	
+}
+
+</script>
 
 
 
