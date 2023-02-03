@@ -5,12 +5,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.jsp.action.Action;
 
-public class BoardRegistFormAction implements Action {
+public class BoardRegistFormAction implements Action{
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		String url="/board/regist";
+		return url;
 	}
 
 }
