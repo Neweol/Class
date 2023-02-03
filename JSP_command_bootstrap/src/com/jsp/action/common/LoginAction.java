@@ -47,7 +47,6 @@ public class LoginAction implements Action {
 				
 				request.setAttribute("retUrl",retUrl);
 				request.setAttribute("errorMsg", errorMsg);
-				request.getRequestDispatcher(url).forward(request, response);
 			}
 			return url;
 			
