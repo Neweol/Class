@@ -10,7 +10,6 @@
 
 
 
-<head></head>
 
 <title>자유게시판목록</title>
 

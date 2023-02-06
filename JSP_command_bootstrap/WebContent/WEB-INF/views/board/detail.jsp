@@ -116,7 +116,7 @@
 		</div><!-- end row -->
     </section>
   </div>
-  <!-- /.content-wrapper -->
+  <!-- .content-wrapper -->
   
 <!-- Modal -->
 <div id="modifyModal" class="modal modal-default fade" role="dialog">
@@ -124,7 +124,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" style="display:none;"></h4>
+        <h4 class="modal-title"></h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>        
       </div>
       <div class="modal-body" data-rno>
