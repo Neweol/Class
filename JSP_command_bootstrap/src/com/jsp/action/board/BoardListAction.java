@@ -1,6 +1,5 @@
 package com.jsp.action.board;
 
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +9,6 @@ import com.jsp.action.Action;
 import com.jsp.command.SearchCriteria;
 import com.jsp.command.SearchCriteriaCommand;
 import com.jsp.controller.HttpRequestParameterAdapter;
-import com.jsp.dto.ReplyVO;
 import com.jsp.service.BoardService;
 
 public class BoardListAction implements Action {
@@ -25,14 +23,10 @@ public class BoardListAction implements Action {
 		String url="/board/list";
 		
 		SearchCriteriaCommand command = HttpRequestParameterAdapter.execute(request, SearchCriteriaCommand.class);
-		System.out.println(command);
 		
 		SearchCriteria cri = command.toSearchCriteria();
-		System.out.println(cri.getPage());
 		
 		Map<String, Object> dataMap = boardService.getBoardList(cri);
-		List<ReplyVO> replyList = (List<ReplyVO>)dataMap.get("replyList");
-		System.out.println(replyList.get(0));
 		request.setAttribute("dataMap", dataMap);
 		
 		return url;

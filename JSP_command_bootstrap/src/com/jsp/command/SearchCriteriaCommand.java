@@ -6,24 +6,6 @@ public class SearchCriteriaCommand {
 	private String keyword;
 	private String searchType;
 	
-	
-	public SearchCriteria toSearchCriteria() {
-		SearchCriteria cri = new SearchCriteria();
-		
-		if(page !=null && !page.isEmpty()) {
-			cri.setPage(Integer.parseInt(page));
-		}
-		if(perPageNum !=null && !perPageNum.isEmpty()) {
-			cri.setPerPageNum(Integer.parseInt(perPageNum));
-		}
-		
-		cri.setSearchType(searchType);
-		cri.setKeyword(keyword);
-		
-		return cri;
-	}
-	
-	
 	public String getPage() {
 		return page;
 	}
@@ -49,6 +31,19 @@ public class SearchCriteriaCommand {
 		this.searchType = searchType;
 	}
 	
-	
-
+	public SearchCriteria toSearchCriteria() {
+		SearchCriteria cri = new SearchCriteria();
+		
+		if(page !=null && !page.isEmpty() ) {
+			cri.setPage(Integer.parseInt(page));				
+		}				
+		if(perPageNum !=null && !perPageNum.isEmpty()) {
+			cri.setPerPageNum(Integer.parseInt(perPageNum));
+		}
+		
+		cri.setSearchType(searchType);
+		cri.setKeyword(keyword);
+		
+		return cri;
+	}
 }

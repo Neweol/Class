@@ -19,7 +19,7 @@ public class BoardDAOImpl implements BoardDAO {
 		RowBounds rowBounds=new RowBounds(offset,limit);
 		
 		List<BoardVO> boardList = session.selectList("Board-Mapper.selectSearchBoardList",cri,rowBounds);
-		
+			
 		return boardList;
 	}
 

@@ -10,6 +10,7 @@
 
 
 
+<head></head>
 
 <title>자유게시판목록</title>
 
@@ -36,7 +37,7 @@
 	  		</div>
 	  	</div>
 	</section>
-
+	 
 	 <!-- Main content -->
     <section class="content">		
 		<div class="card">
@@ -50,7 +51,7 @@
 					  		<option value="20" ${cri.perPageNum == 20 ? 'selected':''}>20개씩</option>
 					  		<option value="50" ${cri.perPageNum == 50 ? 'selected':''}>50개씩</option>
 					  		<option value="100" ${cri.perPageNum == 100 ? 'selected':''}>100개씩</option>
-
+					  		
 					  	</select>						
 						<select class="form-control col-md-4" name="searchType" id="searchType">
 							<option value="tcw"  ${cri.searchType eq 'tcw' ? 'selected':'' }>전 체</option>
@@ -92,7 +93,7 @@
 							<td>${board.bno }</td>
 							<td id="boardTitle" style="text-align:left;max-width: 100px; overflow: hidden; 
 												white-space: nowrap; text-overflow: ellipsis;">
-
+												
 							<a href="javascript:OpenWindow('detail.do?from=list&bno=${board.bno }','상세보기',800,700);">
 								<span class="col-sm-12 ">${board.title }
 									<c:if test="${board.replycnt ne 0 }">		
@@ -100,7 +101,7 @@
 										&nbsp;&nbsp;<i class="fa fa-comment"></i>
 										<span class="badge badge-warning navbar-badge">${board.replycnt}</span>
 										</span>
-
+										
 									</c:if>
 							</span>								
 							</a>
@@ -118,7 +119,7 @@
 				<%@ include file="/WEB-INF/module/pagination.jsp" %>				
 			</div>
 		</div>
-
+		
     </section>
     <!-- /.content -->
 
